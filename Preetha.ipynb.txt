@@ -1,0 +1,50 @@
+import pandas as pd
+import numpy as np
+data=pd.read_csv(r'C:\Users\PREETHA\Downloads\Transactionss.csv')
+data
+duplicate=data[data.duplicated()]
+print(duplicate)
+data.drop_duplicates()
+data1=pd.read_csv(r'C:\Users\PREETHA\Downloads\profit table.csv')
+data1
+records=[]
+for i in range(0,6):
+    records.append([int(data.values[i,j])for j in range(0,5)])
+    U=[]
+for i in range(0,5):
+    U=data.sum(axis=0)*data1.sum(axis=0)
+    print(U[i])
+array=data.to_numpy()
+print(array)
+for i in range(0,6):
+    print(array[i])
+    array1=data1.to_numpy()
+print(array1)
+for i in range(0,5):
+    if((array[0][i]!=0)):
+        print((array[0])[i])
+        for i in range(0,6):
+for j in range(0,5):
+    if((array[i][j]!=0)):
+        print((array[i][j]))
+str=[]
+for i in range(0,6):
+    for j in range(0,5):
+        if(array[i][j]!=0):
+            str=data.columns[j]
+            print(str)
+import itertools
+for i in range(0,6):
+    str=[]
+#for i in range(0,6):
+    for j in range(0,5):
+        if(array[i][j]!=0):
+            str.append(data.columns[j])
+    print(str)
+    all_combinations=[]
+    for i in range(len(str)+1):
+        combinations_object=itertools.combinations(str,i)
+        combinations_list=list(combinations_object)
+        all_combinations+=combinations_list
+    print (all_combinations)
+
