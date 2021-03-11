@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>RadioButtons in JS</title>
+      <script>
+          function fn()
+          {
+              var rd1=document.getElementById("rd1");
+              var rd2=document.getElementById("rd2");
+              if(rd1.checked==true)
+                  alert("it is checked:"+rd1.value);
+              else if(rd2.checked==true)
+                  alert("it is checked:"+rd2.value);
+              else
+                  alert("No channel");
+          } 
+      </script>
+
+    </head>
+      <body>
+        <input id="rd1" name="grop1" type="radio" value="Java">Java</input>
+        <br>
+        <input id="rd2" name="grop2" type="radio" value="JavaScript">JavaScript</input>
+        <br>
+        <button onclick = "fn()" id="btn1">Click</button>
+      </body> 
+</html>
